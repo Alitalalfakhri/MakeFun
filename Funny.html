@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style>
+  body{
+    background: linear-gradient(to right,grey,black);
+    margin-left: 150px;
+  }
+  button{
+   padding: 10px;
+   width: 200px;
+  }
+  
+    
+  
+    button:active {
+      background-color: red;
+    }
+    p{
+      margin-left: 40px;
+    }
+
+    .class1 {
+      color: red;
+      text-shadow: 20px 20px 20px #ff4040;
+    }
+
+    .class2 {
+      color: #976fbd;
+      text-shadow: 20px 20px 20px #978fbd;
+    }
+
+    .class3 {
+      color: grey;
+      text-shadow: 200px 200px 200px #978fbd;
+      
+    }
+
+    .class4 {
+      color: orange;
+      text-shadow: 100px 100px 100px #978fbd;
+    }
+
+    .class5 {
+      color: #1aab34;
+      text-shadow: 20px 20px 20px #1aab32;
+    }
+
+    .class6 {
+      color: tomato;
+      text-shadow: 20px 20px 20px #1aab32;
+    }
+    p{
+      margin-bottom: 30px;
+    }
+    button{
+      background: linear-gradient(to right,  grey,white,black);
+    }
+  </style>
+</head>
+<body>
+  <h1>شوف منو عمك</h1>
+    <button onclick="looping()">منو</button>
+<div class="cont">
+
+  <div id="div"></div>
+</div>
+  
+
+  <script>
+    function getRandomClass() {
+      const classes = ['class1', 'class2', 'class3', 'class4', 'class5', 'class6'];
+      const randomIndex = Math.floor(Math.random() * classes.length);
+      return classes[randomIndex];
+    }
+
+    function looping() {
+      let space = '';
+      for (let i = 0; i < 201; i++) {
+        space += `<p>${i} -  ali talal 3mk</p>`;
+      }
+      document.getElementById('div').innerHTML = space;
+
+      const elements = document.querySelectorAll('p');
+      elements.forEach(element => {
+        element.className = getRandomClass();
+      });
+    }
+  </script>
+</body>
+</html>
